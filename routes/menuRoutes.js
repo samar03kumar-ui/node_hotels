@@ -1,11 +1,12 @@
 import express from "express";
 const router = express.Router();
 import MenuItem from "../models/MenuItem.js";
-router.post("/MenuItem", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const data = req.body;
     const newMenuItem = new MenuItem(data);
     const response = await newMenuItem.save();
+
     console.log("data saved");
     res.status(200).json(response);
   } catch (error) {

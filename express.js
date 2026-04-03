@@ -1,15 +1,21 @@
 import express from "express";
 import db from "./db.js";
-import Person from "./models/person.js";
+import Person from "./models/Person.js";
 import MenuItem from "./models/MenuItem.js";
 import bodyParser from "body-parser";
 import personRoutes from "./routes/personRoutes.js";
 import menuRoutes from "./routes/menuRoutes.js";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
 //const db = require('./db.js');
 
 app.use(bodyParser.json());
+
+
+const PORT = process.env.PORT || 3000;
 
 // const bodyparser = require('body-parser');
 // app.use(bodyParser.json());
@@ -71,11 +77,15 @@ app.get("/",  (req, res) => {
 
 
 
-app.use('/MenuItem' , menuRoutes);
+ //app.use('/MenuItem' , menuRoutes);
+
+ app.use("/menu", menuRoutes);
 
 
 
 app.use('/person' , personRoutes);
+
+
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");
 });

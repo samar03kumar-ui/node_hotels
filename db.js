@@ -4,7 +4,12 @@
 
  // define the mongodb connection url
 
-const mongoURL = 'mongodb://localhost:27017/mydatabases'
+//const mongoURL = 'mongodb://localhost:27017/mydatabases'
+
+require('dotenv').config();
+
+const mongoURL = process.env.MONGODB_URL;
+
 
 // se† up mongodb connection
 
