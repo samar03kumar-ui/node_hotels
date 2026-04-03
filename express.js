@@ -1,5 +1,5 @@
 import express from "express";
-//import db from "./db.js";
+import db from "./db.js";
 import Person from "./models/Person.js";
 import MenuItem from "./models/MenuItem.js";
 import bodyParser from "body-parser";
