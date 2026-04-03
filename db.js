@@ -1,14 +1,18 @@
 // for data base connection
- const mongoose = require('mongoose');
+ //const mongoose = require('mongoose');
+ import mongoose from "mongoose";
 
 
  // define the mongodb connection url
 
 //const mongoURL = 'mongodb://localhost:27017/mydatabases'
 
-require('dotenv').config();
+//require('dotenv').config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const mongoURL = process.env.MONGODB_URL;
+console.log("Mongo URL:", mongoURL);
 
 
 // se† up mongodb connection
@@ -38,4 +42,5 @@ db.on('disconnected', () => {
 
 // Export the database connection 
 
-module.exports = db;
+//module.exports = db;
+export default db;
