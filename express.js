@@ -1,5 +1,5 @@
 import express from "express";
-import db from "./db.js";
+//import db from "./db.js";
 import Person from "./models/Person.js";
 import MenuItem from "./models/MenuItem.js";
 import bodyParser from "body-parser";
@@ -85,7 +85,10 @@ app.get("/",  (req, res) => {
 
 app.use('/person' , personRoutes);
 
-
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on port ${PORT}`);
 });
+
+// app.listen(3000, () => {
+//   console.log("Server is running on http://localhost:3000");
+// });
